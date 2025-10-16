@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio</title>
+    <!-- Use Tailwind CSS for a responsive, modern design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ /* Custom styles for animations and layout */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Class for the visible mobile menu */
+        .mobile-menu-active {
+            display: flex !important;
+        }
+
+        /* Custom scrollbar styling for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+ }
+::-webkit-scrollbar-thumb:hover {
+     background: #4b5563;
+ }
+ </style>
+</head>
+<body>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                Your Name
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-purple-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-purple-400 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="hover:text-purple-400 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden flex-col items-center pb-4 space-y-2 text-lg">
+            <a href="#about" class="w-full text-center py-2 hover:bg-gray-800 transition-colors duration-300">About</a>
+            <a href="#skills" class="w-full text-center py-2 hover:bg-gray-800 transition-colors duration-300">Skills</a>
+            <a href="#projects" class="w-full text-center py-2 hover:bg-gray-800 transition-colors duration-300">Projects</a>
+            <a href="#contact" class="w-full text-center py-2 hover:bg-gray-800 transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pt-24 pb-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="min-h-screen flex items-center justify-center p-8 about-section">
+            <div class="text-center max-w-2xl">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-4">
+                    Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Your Name</span>
+                </h2>
+                <p class="text-xl md:text-2xl mb-8">A passionate Web Developer focused on building beautiful and functional applications.</p>
+                <div class="space-x-4">
+                    <a href="#projects" class="inline-block px-6 py-3 rounded-full text-white font-semibold transition-transform duration-300 transform hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="inline-block px-6 py-3 rounded-full border-2 border-purple-500 text-purple-400 font-semibold transition-colors duration-300 hover:bg-purple-500 hover:text-white">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 skills-section">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-12">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <!-- Skill Card -->
+                <div class="p-6 text-center rounded-xl bg-gray-800 shadow-lg border border-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl text-yellow-400 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 mx-auto">
+                            <path d="M7 4h10v2H7V4zm-2 2h14v2H5V6zm14 3h-2v11h2V9zM7 9H5v11h2V9zm8-3H9v15h6V6zm-2 2v2h-2V8h2zm0 3v2h-2v-2h2zm0 3v2h-2v-2h2zm0 3v2h-2v-2h2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xl font-semibold">JavaScript</p>
+                </div>
+                <!-- Repeat for other skills -->
+                <div class="p-6 text-center rounded-xl bg-gray-800 shadow-lg border border-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl text-blue-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 mx-auto">
+                            <path d="M4 4h16v16H4V4zm16-2a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16zM6 6v2h2V6H6zm4 0v2h2V6h-2zm4 0v2h2V6h-2zM6 10v2h2v-2H6zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2zM6 14v2h2v-2H6zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2zM6 18v2h2v-2H6zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xl font-semibold">HTML5</p>
+                </div>
+                <div class="p-6 text-center rounded-xl bg-gray-800 shadow-lg border border-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl text-blue-400 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 mx-auto">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xl font-semibold">CSS3</p>
+                </div>
+                <div class="p-6 text-center rounded-xl bg-gray-800 shadow-lg border border-gray-700 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <div class="text-4xl text-green-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 mx-auto">
+                            <path d="M10 16h4v-2h-4v2zm0-4h4V8h-4v4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <p class="text-xl font-semibold">Node.js</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 projects-section">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project Card -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 project-card">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Project 1: Web App</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project. Mention the key technologies used and the problem it solves.</p>
+                        <a href="#" class="inline-block px-4 py-2 text-sm rounded-full bg-purple-500 text-white font-semibold transition-colors duration-300 hover:bg-purple-600">
+                            View Live
+                        </a>
+                    </div>
+                </div>
+                <!-- Repeat for other projects -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 project-card">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Project 2: Mobile Game</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project. Mention the key technologies used and the problem it solves.</p>
+                        <a href="#" class="inline-block px-4 py-2 text-sm rounded-full bg-purple-500 text-white font-semibold transition-colors duration-300 hover:bg-purple-600">
+                            View Live
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-700 project-card">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Project 3: API Service</h3>
+                        <p class="text-gray-400 mb-4">A brief description of the project. Mention the key technologies used and the problem it solves.</p>
+                        <a href="#" class="inline-block px-4 py-2 text-sm rounded-full bg-purple-500 text-white font-semibold transition-colors duration-300 hover:bg-purple-600">
+                            View Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 contact-section">
+            <h2 class="text-center text-4xl md:text-5xl font-extrabold text-white mb-12">Get in Touch</h2>
+            <div class="max-w-xl mx-auto bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md bg-gray-700 border-gray-600 text-white focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="px-8 py-3 rounded-full text-white font-semibold transition-transform duration-300 transform hover:scale-105 bg-gradient-to-r from-purple-500 to-pink-500">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p class="mt-2 text-sm">Built with HTML, Tailwind CSS, and GSAP.</p>
+    </footer>
+
+    <!-- GSAP and ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script>
+         // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('mobile-menu-active');
+        });
+        
+        // Hide mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('mobile-menu-active');
+            });
+        });
+
+        // GSAP Animations
+        // Animate the hero section on page load
+        gsap.from(".about-section h2", { duration: 1, y: 50, opacity: 0, ease: "power2.out" });
+        gsap.from(".about-section p", { duration: 1, delay: 0.3, y: 50, opacity: 0, ease: "power2.out" });
+        gsap.from(".about-section a", { duration: 1, delay: 0.6, y: 50, opacity: 0, stagger: 0.2, ease: "power2.out" });
+
+        // Fade in and slide up sections as they come into view
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Animate skill cards
+        gsap.from(".skills-section > div > div", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".skills-section",
+                start: "top 70%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        // Animate project cards
+        gsap.from(".project-card", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".projects-section",
+                start: "top 70%",
+                toggleActions: "play none none none"
+            }
+        });
+    </script>
+
+</body>
+</html>
